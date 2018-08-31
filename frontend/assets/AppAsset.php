@@ -32,7 +32,7 @@ class AppAsset extends AssetBundle
     ];
     public $js = [
 
-        // <script src="vendor/jquery/jquery.min.js"></script>
+        'vendors/jquery/jquery.min.js',
         'vendors/jquery.appear/jquery.appear.min.js',
         'vendors/jquery.easing/jquery.easing.min.js',
         'vendors/jquery-cookie/jquery-cookie.min.js',
@@ -55,7 +55,7 @@ class AppAsset extends AssetBundle
         
     ];
     public $depends = [
-        'yii\web\YiiAsset',
-        'yii\bootstrap\BootstrapAsset',
+        // 'yii\web\YiiAsset',
+        // 'yii\bootstrap\BootstrapAsset',
     ];
 }

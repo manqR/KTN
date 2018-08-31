@@ -9,6 +9,8 @@ use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
 use frontend\assets\AppAsset;
 use common\widgets\Alert;
+use yii\web\View;
+
 
 AppAsset::register($this);
 ?>
@@ -26,6 +28,13 @@ AppAsset::register($this);
 <body>
 <?php $this->beginBody() ?>
 
+<?php
+
+    $root = '@web';
+    /* @JS */
+    $this->registerJsFile($root."/vendors/modernizr/modernizr.min.js",
+    ['position' => View::POS_END]);
+?>
 <body>
 
 		<div class="body">
