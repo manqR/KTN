@@ -43,11 +43,20 @@
 												Home
 											</a>
                                         </li>
-                                        <li>
-											<a class="dropdown-item" href="index.html">
+										<li class="dropdown">
+											<a class="dropdown-item dropdown-toggle" href="index.html">
 												Tentang Kami
 											</a>
-                                        </li>
+											<ul class="dropdown-menu">
+												
+												<li>
+													<a class="dropdown-item" href="index-classic.html">Profil Perusahaan</a>													
+												</li>
+												<li>
+													<a class="dropdown-item" href="index-corporate.html">Jajaran Manajemen</a>													
+												</li>												
+											</ul>
+										</li>
 										<li class="dropdown">
 											<a class="dropdown-item dropdown-toggle" href="index.html">
 												Produk
@@ -86,6 +95,11 @@
 												</li>
 											</ul>
 										</li>
+                                        <li>
+											<a class="dropdown-item" href="index.html">
+												Karir
+											</a>
+                                        </li>										
                                         <li>
 											<a class="dropdown-item" href="index.html">
 												Hubungi Kami

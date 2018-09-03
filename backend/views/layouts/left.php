@@ -95,24 +95,19 @@
                 <i class="material-icons">arrow_drop_down</i>
                 </span>
                 <i class="material-icons text-success">font_download</i>               
-                <span>Student</span>
+                <span>Tentang Kami</span>
                 </a>
                 <ul class="sub-menu">
                     <li>
                         <a href="registration">
-                        <span>Registration</span>
+                        <span>Profil Perusahaan</span>
                         </a>
                     </li>
 					<li>
                         <a href="class">
-                        <span>Kelas</span>
+                        <span>Jajaran Manajemen</span>
                         </a>
-                    </li>      
-                    <li>
-                        <a href="billing">
-                        <span>Billing</span>
-                        </a>
-                    </li> 					            
+                    </li>                        			            
                 </ul>
             </li>
             <!-- /student -->
@@ -124,30 +119,38 @@
                 <i class="material-icons">arrow_drop_down</i>
                 </span>
                 <i class="material-icons text-danger">explore</i>
-                <span>Setup</span>
+                <span>Produk</span>
                 </a>
                 <ul class="sub-menu">
                     <li>
                         <a href="tagihan">
-                        <span>Setup Tagihan</span>
+                        <span>Kategori Produk</span>
                         </a>
                     </li>
                     <li>
                         <a href="kelas">
-                        <span>Tambah Kelas</span>
+                        <span>Produk</span>
                         </a>
-                    </li>
-                    <li>
-                        <a href="jurusan">
-                        <span>Tambah Jurusan</span>
-                        </a>
-                    </li>      
-					<li>
-                        <a href="ajaran">
-                        <span>Tahun Ajaran</span>
-                        </a>
-                    </li>                   
+                    </li>                                
                 </ul>
+            </li>
+            <!-- /setup -->
+
+            <!-- setup -->
+           <li>
+                <a href="<?= Yii::$app->homeUrl; ?>">
+                <i class="material-icons text-primary">home</i>
+                <span>Karir</span>
+                </a>
+            </li>
+            <!-- /setup -->
+
+            <!-- setup -->
+           <li>
+                <a href="<?= Yii::$app->homeUrl; ?>">
+                <i class="material-icons text-primary">home</i>
+                <span>Kontak</span>
+                </a>
             </li>
             <!-- /setup -->
             

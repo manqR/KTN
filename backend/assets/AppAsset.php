@@ -20,13 +20,12 @@ class AppAsset extends AssetBundle
         'styles/app.skins.css',
     ];
     public $js = [
-		// 'vendor/jquery/dist/jquery.js',
+		// 'vendors/jquery/dist/jquery.js',
 		'vendors/pace/pace.js',
 		'vendors/tether/dist/js/tether.js',
 		'vendors/bootstrap/dist/js/bootstrap.js',
 		'vendors/fastclick/lib/fastclick.js',
-		'scripts/constants.js',
-		'scripts/main.js',
+		'scripts/constants.js',		
     ];
     public $depends = [
         'yii\web\YiiAsset',
