@@ -1,5 +1,12 @@
 
+<?php
 
+	use frontend\models\Logo;
+
+
+   $logo = Logo::find()
+   			->One();
+?>
 <header id="header" data-plugin-options="{'stickyEnabled': true, 'stickyEnableOnBoxed': true, 'stickyEnableOnMobile': true, 'stickyStartAt': 55, 'stickySetTop': '-55px', 'stickyChangeLogo': true}">
 	<div class="header-body">
 		<div class="header-container container">
@@ -8,7 +15,7 @@
 					<div class="header-row">
 						<div class="header-logo">
 							<a href="index.html">
-								<img alt="Porto" width="180" data-sticky-width="150"  data-sticky-top="33" src="img/logo.png">
+								<img alt="Porto" width="180" data-sticky-width="150"  data-sticky-top="33" src="img/<?= $logo->file_img ?>">
 							</a>
 						</div>
 					</div>

@@ -12,21 +12,23 @@
 
 -- Dumping structure for table ktn.aboutus
 CREATE TABLE IF NOT EXISTS `aboutus` (
-  `idabout` int(11) NOT NULL,
+  `idabout` int(11) NOT NULL AUTO_INCREMENT,
   `kategori` varchar(50) NOT NULL,
   `full_description` text NOT NULL,
   `short_description` varchar(500) DEFAULT NULL,
   PRIMARY KEY (`idabout`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
--- Dumping data for table ktn.aboutus: ~0 rows (approximately)
+-- Dumping data for table ktn.aboutus: ~1 rows (approximately)
 /*!40000 ALTER TABLE `aboutus` DISABLE KEYS */;
+INSERT INTO `aboutus` (`idabout`, `kategori`, `full_description`, `short_description`) VALUES
+	(3, 'Jajaran', 'asdasd', 'asdada');
 /*!40000 ALTER TABLE `aboutus` ENABLE KEYS */;
 
 
 -- Dumping structure for table ktn.blog
 CREATE TABLE IF NOT EXISTS `blog` (
-  `idblog` int(11) NOT NULL,
+  `idblog` int(11) NOT NULL AUTO_INCREMENT,
   `img_display` varchar(50) DEFAULT NULL,
   `title` varchar(50) NOT NULL,
   `short_description` varchar(500) DEFAULT NULL,
@@ -34,16 +36,18 @@ CREATE TABLE IF NOT EXISTS `blog` (
   `tanggal` date DEFAULT NULL,
   `author` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`idblog`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
 -- Dumping data for table ktn.blog: ~0 rows (approximately)
 /*!40000 ALTER TABLE `blog` DISABLE KEYS */;
+INSERT INTO `blog` (`idblog`, `img_display`, `title`, `short_description`, `full_description`, `tanggal`, `author`) VALUES
+	(1, '', 'asd', 'ads', 'asd', NULL, NULL);
 /*!40000 ALTER TABLE `blog` ENABLE KEYS */;
 
 
 -- Dumping structure for table ktn.client
 CREATE TABLE IF NOT EXISTS `client` (
-  `idclient` int(11) NOT NULL,
+  `idclient` int(11) NOT NULL AUTO_INCREMENT,
   `nama_klien` varchar(50) DEFAULT NULL,
   `file_img` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`idclient`)
@@ -56,27 +60,31 @@ CREATE TABLE IF NOT EXISTS `client` (
 
 -- Dumping structure for table ktn.faq
 CREATE TABLE IF NOT EXISTS `faq` (
-  `idfaq` int(11) NOT NULL,
+  `idfaq` int(11) NOT NULL AUTO_INCREMENT,
   `question` text NOT NULL,
   `answer` text NOT NULL,
   PRIMARY KEY (`idfaq`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
 -- Dumping data for table ktn.faq: ~0 rows (approximately)
 /*!40000 ALTER TABLE `faq` DISABLE KEYS */;
+INSERT INTO `faq` (`idfaq`, `question`, `answer`) VALUES
+	(1, 'asd', 'asd');
 /*!40000 ALTER TABLE `faq` ENABLE KEYS */;
 
 
 -- Dumping structure for table ktn.karir
 CREATE TABLE IF NOT EXISTS `karir` (
-  `idkarir` int(11) NOT NULL,
+  `idkarir` int(11) NOT NULL AUTO_INCREMENT,
   `title` varchar(50) NOT NULL,
   `descripition` text NOT NULL,
   PRIMARY KEY (`idkarir`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
 -- Dumping data for table ktn.karir: ~0 rows (approximately)
 /*!40000 ALTER TABLE `karir` DISABLE KEYS */;
+INSERT INTO `karir` (`idkarir`, `title`, `descripition`) VALUES
+	(1, 'asd', 'adsasd');
 /*!40000 ALTER TABLE `karir` ENABLE KEYS */;
 
 
@@ -90,16 +98,18 @@ CREATE TABLE IF NOT EXISTS `kontak` (
   `twitter` varchar(50) DEFAULT NULL,
   `linkedin` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`idkontak`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
 -- Dumping data for table ktn.kontak: ~0 rows (approximately)
 /*!40000 ALTER TABLE `kontak` DISABLE KEYS */;
+INSERT INTO `kontak` (`idkontak`, `alamat`, `tlp`, `email`, `facebook`, `twitter`, `linkedin`) VALUES
+	(1, 'asd', 'asd', 'asdas', 'sdasd', 'asd', 'asdasd');
 /*!40000 ALTER TABLE `kontak` ENABLE KEYS */;
 
 
 -- Dumping structure for table ktn.layanan
 CREATE TABLE IF NOT EXISTS `layanan` (
-  `idlayanan` int(11) NOT NULL,
+  `idlayanan` int(11) NOT NULL AUTO_INCREMENT,
   `img` varchar(50) DEFAULT NULL,
   `title` varchar(50) DEFAULT NULL,
   `short_desc` varchar(500) DEFAULT NULL,
@@ -115,14 +125,16 @@ CREATE TABLE IF NOT EXISTS `layanan` (
 
 -- Dumping structure for table ktn.logo
 CREATE TABLE IF NOT EXISTS `logo` (
-  `idlogo` int(11) NOT NULL,
+  `idlogo` int(11) NOT NULL AUTO_INCREMENT,
   `file_img` varchar(50) DEFAULT NULL,
   `alt` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`idlogo`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
 -- Dumping data for table ktn.logo: ~0 rows (approximately)
 /*!40000 ALTER TABLE `logo` DISABLE KEYS */;
+INSERT INTO `logo` (`idlogo`, `file_img`, `alt`) VALUES
+	(1, '', 'asd');
 /*!40000 ALTER TABLE `logo` ENABLE KEYS */;
 
 
@@ -143,31 +155,33 @@ INSERT INTO `migration` (`version`, `apply_time`) VALUES
 
 -- Dumping structure for table ktn.produk
 CREATE TABLE IF NOT EXISTS `produk` (
-  `idproduk` int(11) NOT NULL,
+  `idproduk` int(11) NOT NULL AUTO_INCREMENT,
   `idkategori` int(11) NOT NULL,
   `title` varchar(50) NOT NULL,
   `image` varchar(50) DEFAULT NULL,
   `description` text NOT NULL,
-  PRIMARY KEY (`idproduk`),
-  KEY `FK__produk_kategori` (`idkategori`),
-  CONSTRAINT `FK__produk_kategori` FOREIGN KEY (`idkategori`) REFERENCES `produk_kategori` (`idcategory`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  PRIMARY KEY (`idproduk`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
--- Dumping data for table ktn.produk: ~0 rows (approximately)
+-- Dumping data for table ktn.produk: ~1 rows (approximately)
 /*!40000 ALTER TABLE `produk` DISABLE KEYS */;
+INSERT INTO `produk` (`idproduk`, `idkategori`, `title`, `image`, `description`) VALUES
+	(1, 1, 'asdads', '', 'asdad');
 /*!40000 ALTER TABLE `produk` ENABLE KEYS */;
 
 
 -- Dumping structure for table ktn.produk_kategori
 CREATE TABLE IF NOT EXISTS `produk_kategori` (
-  `idcategory` int(11) NOT NULL,
+  `idcategory` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) NOT NULL,
   `status` int(11) NOT NULL,
   PRIMARY KEY (`idcategory`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
--- Dumping data for table ktn.produk_kategori: ~0 rows (approximately)
+-- Dumping data for table ktn.produk_kategori: ~1 rows (approximately)
 /*!40000 ALTER TABLE `produk_kategori` DISABLE KEYS */;
+INSERT INTO `produk_kategori` (`idcategory`, `name`, `status`) VALUES
+	(1, 'q', 1);
 /*!40000 ALTER TABLE `produk_kategori` ENABLE KEYS */;
 
 
