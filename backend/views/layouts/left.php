@@ -45,8 +45,8 @@
         </a>
         <!-- /toggle offscreen menu -->
         <!-- logo -->
-        <a class="brand-logo">
-			<img class="expanding-hidden" src="images/logo.png" alt=""/>
+        <a class="brand-logo" style="text-align: center">
+			<img class="expanding-hidden" src="images/logo.png" alt="" style="width: 70%";/>
         </a>
         <!-- /logo -->
     </div>
@@ -97,15 +97,15 @@
                 <i class="material-icons text-success">font_download</i>               
                 <span>Tentang Kami</span>
                 </a>
-                <ul class="sub-menu">
-                    <li>
-                        <a href="registration">
-                        <span>Profil Perusahaan</span>
-                        </a>
-                    </li>
+                <ul class="sub-menu">                   
 					<li>
-                        <a href="class">
-                        <span>Jajaran Manajemen</span>
+                        <a href="profile">
+                        <span>Profile / Jajaran Manajemen</span>
+                        </a>
+                    </li>                        			            
+					<li>
+                        <a href="layanan">
+                        <span>Layanan</span>
                         </a>
                     </li>                        			            
                 </ul>
@@ -118,37 +118,77 @@
                 <span class="menu-caret">
                 <i class="material-icons">arrow_drop_down</i>
                 </span>
-                <i class="material-icons text-danger">explore</i>
+                <i class="material-icons text-warning"> cloud_upload</i>
                 <span>Produk</span>
                 </a>
                 <ul class="sub-menu">
                     <li>
-                        <a href="tagihan">
+                        <a href="kategori">
                         <span>Kategori Produk</span>
                         </a>
                     </li>
                     <li>
-                        <a href="kelas">
+                        <a href="produk">
                         <span>Produk</span>
                         </a>
                     </li>                                
                 </ul>
             </li>
             <!-- /setup -->
-
+            
+             <!-- setup -->
+             <li>
+                <a href="javascript:;">
+                <span class="menu-caret">
+                <i class="material-icons">arrow_drop_down</i>
+                </span>
+                <i class="material-icons text-danger">add_a_photo</i>
+                <span>Upload</span>
+                </a>
+                <ul class="sub-menu">
+                    <li>
+                        <a href="logo">
+                        <span>Logo</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="slider">
+                        <span>Slider</span>
+                        </a>
+                    </li>                                
+                </ul>
+            </li>
+            <!-- /setup -->
+            
             <!-- setup -->
            <li>
-                <a href="<?= Yii::$app->homeUrl; ?>">
-                <i class="material-icons text-primary">home</i>
+                <a href="karir">
+                <i class="material-icons text-warning">accessibility</i>
                 <span>Karir</span>
+                </a>
+            </li>
+            <!-- /setup -->
+            <!-- setup -->
+           <li>
+                <a href="blog">
+                <i class="material-icons text-danger">create</i>
+                <span>Blog</span>
+                </a>
+            </li>
+            <!-- /setup -->
+            <!-- setup -->
+           <li>
+                <a href="faq">
+                <i class="material-icons text-default">question_answer</i>
+                <span>Faq</span>
                 </a>
             </li>
             <!-- /setup -->
 
             <!-- setup -->
            <li>
-                <a href="<?= Yii::$app->homeUrl; ?>">
-                <i class="material-icons text-primary">home</i>
+                <a href="kontak">
+                <i class="material-icons text-success">contacts</i>
                 <span>Kontak</span>
                 </a>
             </li>

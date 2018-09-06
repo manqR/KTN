@@ -25,7 +25,8 @@ class AppAsset extends AssetBundle
 		'vendors/tether/dist/js/tether.js',
 		'vendors/bootstrap/dist/js/bootstrap.js',
 		'vendors/fastclick/lib/fastclick.js',
-		'scripts/constants.js',		
+        'scripts/constants.js',		
+        'scripts/main.js',
     ];
     public $depends = [
         'yii\web\YiiAsset',
