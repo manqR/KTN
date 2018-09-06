@@ -11,12 +11,11 @@ $this->title = 'Produks';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="produk-index">
-
-    <h1><?= Html::encode($this->title) ?></h1>
+    
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a('Create Produk', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a(' Tambah Produk', ['create'], ['class' => 'btn btn-success fa fa-plus']) ?>
     </p>
 
     <?= GridView::widget([
@@ -24,8 +23,7 @@ $this->params['breadcrumbs'][] = $this->title;
         'filterModel' => $searchModel,
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
-
-            'idproduk',
+            
             'idkategori',
             'title',
             'image',

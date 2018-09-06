@@ -10,9 +10,7 @@ $this->params['breadcrumbs'][] = ['label' => 'Blogs', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->title, 'url' => ['view', 'id' => $model->idblog]];
 $this->params['breadcrumbs'][] = 'Update';
 ?>
-<div class="blog-update">
-
-    <h1><?= Html::encode($this->title) ?></h1>
+<div class="card">
 
     <?= $this->render('_form', [
         'model' => $model,

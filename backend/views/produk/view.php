@@ -10,9 +10,8 @@ $this->title = $model->title;
 $this->params['breadcrumbs'][] = ['label' => 'Produks', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="produk-view">
 
-    <h1><?= Html::encode($this->title) ?></h1>
+<div class="card card-block">   
 
     <p>
         <?= Html::a('Update', ['update', 'id' => $model->idproduk], ['class' => 'btn btn-primary']) ?>
@@ -27,8 +26,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <?= DetailView::widget([
         'model' => $model,
-        'attributes' => [
-            'idproduk',
+        'attributes' => [            
             'idkategori',
             'title',
             'image',

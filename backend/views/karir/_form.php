@@ -8,11 +8,9 @@ use yii\widgets\ActiveForm;
 /* @var $form yii\widgets\ActiveForm */
 ?>
 
-<div class="karir-form">
+<div class="card-block">
 
     <?php $form = ActiveForm::begin(); ?>
-
-    <?= $form->field($model, 'idkarir')->textInput() ?>
 
     <?= $form->field($model, 'title')->textInput(['maxlength' => true]) ?>
 

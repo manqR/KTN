@@ -27,10 +27,7 @@ class Logo extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['idlogo'], 'required'],
-            [['idlogo'], 'integer'],
             [['file_img', 'alt'], 'string', 'max' => 50],
-            [['idlogo'], 'unique'],
         ];
     }
 

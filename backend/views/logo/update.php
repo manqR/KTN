@@ -10,9 +10,8 @@ $this->params['breadcrumbs'][] = ['label' => 'Logos', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->idlogo, 'url' => ['view', 'id' => $model->idlogo]];
 $this->params['breadcrumbs'][] = 'Update';
 ?>
-<div class="logo-update">
 
-    <h1><?= Html::encode($this->title) ?></h1>
+<div class="card">    
 
     <?= $this->render('_form', [
         'model' => $model,

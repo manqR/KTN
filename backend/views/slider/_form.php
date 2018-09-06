@@ -8,15 +8,15 @@ use yii\widgets\ActiveForm;
 /* @var $form yii\widgets\ActiveForm */
 ?>
 
-<div class="slider-form">
+<div class="card-block">
 
     <?php $form = ActiveForm::begin(); ?>
 
     <?= $form->field($model, 'title1')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'title2')->textInput(['maxlength' => true]) ?>
-
-    <?= $form->field($model, 'img_slider')->textInput(['maxlength' => true]) ?>
+    
+    <?= $form->field($model, 'img_slider')->fileInput(['class'=>'form-control'])->label('Upload Image') ?>
 
     <?= $form->field($model, 'alt')->textInput(['maxlength' => true]) ?>
 

@@ -10,9 +10,9 @@ $this->title = 'Create Karir';
 $this->params['breadcrumbs'][] = ['label' => 'Karirs', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="karir-create">
 
-    <h1><?= Html::encode($this->title) ?></h1>
+
+<div class="card">
 
     <?= $this->render('_form', [
         'model' => $model,

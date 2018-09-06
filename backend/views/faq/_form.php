@@ -8,11 +8,9 @@ use yii\widgets\ActiveForm;
 /* @var $form yii\widgets\ActiveForm */
 ?>
 
-<div class="faq-form">
+<div class="card-block">
 
     <?php $form = ActiveForm::begin(); ?>
-
-    <?= $form->field($model, 'idfaq')->textInput() ?>
 
     <?= $form->field($model, 'question')->textarea(['rows' => 6]) ?>
 

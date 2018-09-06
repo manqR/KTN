@@ -10,9 +10,8 @@ $this->title = 'Create Produk Kategori';
 $this->params['breadcrumbs'][] = ['label' => 'Produk Kategoris', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="produk-kategori-create">
 
-    <h1><?= Html::encode($this->title) ?></h1>
+<div class="card">
 
     <?= $this->render('_form', [
         'model' => $model,

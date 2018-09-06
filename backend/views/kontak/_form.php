@@ -8,7 +8,7 @@ use yii\widgets\ActiveForm;
 /* @var $form yii\widgets\ActiveForm */
 ?>
 
-<div class="kontak-form">
+<div class="card-block">
 
     <?php $form = ActiveForm::begin(); ?>
 

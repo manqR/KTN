@@ -10,10 +10,8 @@ $this->title = $model->name;
 $this->params['breadcrumbs'][] = ['label' => 'Produk Kategoris', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="produk-kategori-view">
 
-    <h1><?= Html::encode($this->title) ?></h1>
-
+<div class="card card-block">   
     <p>
         <?= Html::a('Update', ['update', 'id' => $model->idcategory], ['class' => 'btn btn-primary']) ?>
         <?= Html::a('Delete', ['delete', 'id' => $model->idcategory], [
@@ -27,8 +25,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <?= DetailView::widget([
         'model' => $model,
-        'attributes' => [
-            'idcategory',
+        'attributes' => [            
             'name',
             'status',
         ],

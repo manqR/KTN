@@ -10,9 +10,7 @@ $this->title = $model->idfaq;
 $this->params['breadcrumbs'][] = ['label' => 'Faqs', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="faq-view">
-
-    <h1><?= Html::encode($this->title) ?></h1>
+<div class="card card-block">    
 
     <p>
         <?= Html::a('Update', ['update', 'id' => $model->idfaq], ['class' => 'btn btn-primary']) ?>
@@ -28,7 +26,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= DetailView::widget([
         'model' => $model,
         'attributes' => [
-            'idfaq',
+       
             'question:ntext',
             'answer:ntext',
         ],

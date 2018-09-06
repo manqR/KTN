@@ -10,9 +10,8 @@ $this->title = $model->idkontak;
 $this->params['breadcrumbs'][] = ['label' => 'Kontaks', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="kontak-view">
+<div class="card card-block">    
 
-    <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
         <?= Html::a('Update', ['update', 'id' => $model->idkontak], ['class' => 'btn btn-primary']) ?>
@@ -27,8 +26,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <?= DetailView::widget([
         'model' => $model,
-        'attributes' => [
-            'idkontak',
+        'attributes' => [  
             'alamat',
             'tlp',
             'email:email',

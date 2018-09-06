@@ -10,12 +10,12 @@ $this->params['breadcrumbs'][] = ['label' => 'Sliders', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->idslider, 'url' => ['view', 'id' => $model->idslider]];
 $this->params['breadcrumbs'][] = 'Update';
 ?>
-<div class="slider-update">
 
-    <h1><?= Html::encode($this->title) ?></h1>
+<div class="card">
 
     <?= $this->render('_form', [
         'model' => $model,
     ]) ?>
 
 </div>
+

@@ -31,13 +31,11 @@ class Blog extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['idblog', 'title', 'full_description'], 'required'],
-            [['idblog'], 'integer'],
+            [['title', 'full_description'], 'required'],
             [['full_description'], 'string'],
             [['tanggal'], 'safe'],
             [['img_display', 'title', 'author'], 'string', 'max' => 50],
             [['short_description'], 'string', 'max' => 500],
-            [['idblog'], 'unique'],
         ];
     }
 

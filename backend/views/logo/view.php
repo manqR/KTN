@@ -10,10 +10,7 @@ $this->title = $model->idlogo;
 $this->params['breadcrumbs'][] = ['label' => 'Logos', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="logo-view">
-
-    <h1><?= Html::encode($this->title) ?></h1>
-
+<div class="card card-block">  
     <p>
         <?= Html::a('Update', ['update', 'id' => $model->idlogo], ['class' => 'btn btn-primary']) ?>
         <?= Html::a('Delete', ['delete', 'id' => $model->idlogo], [
@@ -28,7 +25,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= DetailView::widget([
         'model' => $model,
         'attributes' => [
-            'idlogo',
+            
             'file_img',
             'alt',
         ],

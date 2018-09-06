@@ -8,23 +8,19 @@ use yii\widgets\ActiveForm;
 /* @var $form yii\widgets\ActiveForm */
 ?>
 
-<div class="blog-form">
+
+<div class="card-block">
 
     <?php $form = ActiveForm::begin(); ?>
-
-    <?= $form->field($model, 'idblog')->textInput() ?>
-
-    <?= $form->field($model, 'img_display')->textInput(['maxlength' => true]) ?>
+    
+    <?= $form->field($model, 'img_display')->fileInput(['class'=>'form-control'])->label('Upload Image') ?>
 
     <?= $form->field($model, 'title')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'short_description')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'short_description')->textarea(['rows' => 6]) ?>    
 
     <?= $form->field($model, 'full_description')->textarea(['rows' => 6]) ?>
-
-    <?= $form->field($model, 'tanggal')->textInput() ?>
-
-    <?= $form->field($model, 'author')->textInput(['maxlength' => true]) ?>
+   
 
     <div class="form-group">
         <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>

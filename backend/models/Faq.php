@@ -27,10 +27,8 @@ class Faq extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['idfaq', 'question', 'answer'], 'required'],
-            [['idfaq'], 'integer'],
+            [['question', 'answer'], 'required'],
             [['question', 'answer'], 'string'],
-            [['idfaq'], 'unique'],
         ];
     }
 

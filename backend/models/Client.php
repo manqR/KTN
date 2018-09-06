@@ -27,10 +27,7 @@ class Client extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['idclient'], 'required'],
-            [['idclient'], 'integer'],
             [['nama_klien', 'file_img'], 'string', 'max' => 50],
-            [['idclient'], 'unique'],
         ];
     }
 

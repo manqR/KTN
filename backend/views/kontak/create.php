@@ -10,12 +10,11 @@ $this->title = 'Create Kontak';
 $this->params['breadcrumbs'][] = ['label' => 'Kontaks', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="kontak-create">
-
-    <h1><?= Html::encode($this->title) ?></h1>
+<div class="card">
 
     <?= $this->render('_form', [
         'model' => $model,
     ]) ?>
 
 </div>
+

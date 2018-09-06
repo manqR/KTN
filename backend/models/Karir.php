@@ -27,11 +27,9 @@ class Karir extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['idkarir', 'title', 'descripition'], 'required'],
-            [['idkarir'], 'integer'],
+            [['title', 'descripition'], 'required'],
             [['descripition'], 'string'],
             [['title'], 'string', 'max' => 50],
-            [['idkarir'], 'unique'],
         ];
     }
 

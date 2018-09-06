@@ -10,12 +10,12 @@ $this->title = 'Create Logo';
 $this->params['breadcrumbs'][] = ['label' => 'Logos', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="logo-create">
 
-    <h1><?= Html::encode($this->title) ?></h1>
+<div class="card">
 
     <?= $this->render('_form', [
         'model' => $model,
     ]) ?>
 
 </div>
+

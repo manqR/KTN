@@ -10,9 +10,9 @@ $this->title = $model->idslider;
 $this->params['breadcrumbs'][] = ['label' => 'Sliders', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="slider-view">
 
-    <h1><?= Html::encode($this->title) ?></h1>
+<div class="card card-block">   
+
 
     <p>
         <?= Html::a('Update', ['update', 'id' => $model->idslider], ['class' => 'btn btn-primary']) ?>
@@ -27,8 +27,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <?= DetailView::widget([
         'model' => $model,
-        'attributes' => [
-            'idslider',
+        'attributes' => [            
             'title1',
             'title2',
             'img_slider',
