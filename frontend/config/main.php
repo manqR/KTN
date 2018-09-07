@@ -40,7 +40,12 @@ return [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
-                ''
+                'tentang-kami'=>'tentangkami/profile',
+                'jajaran-manajemen'=>'tentangkami/manajemen',
+                'kategori-<name>'=>'kategori/index',
+                'produk-<kat>-<name>'=>'produk/index',
+                'karir'=>'karir/index',
+                'hubungi-kami'=>'hubungikami/index',
             ],
         ],        
     ],

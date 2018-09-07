@@ -16,6 +16,29 @@
 			->where(['status'=>1])
 			->all();
 
+	
+	$this->registerJs('
+		
+			$(function () {				
+				
+				var url = window.location.pathname; 
+				var activePage = url.substring(url.lastIndexOf("/") + 1);				
+				$(".nav li a").each(function () { 
+					var linkPage = this.href.substring(this.href.lastIndexOf("/") + 1);
+					
+					var $this = $(this);
+					var activePageSplit = activePage.split("-");
+					
+					if (activePage == linkPage || activePageSplit[0] == linkPage) {							
+						$(this).parents("li").addClass("active");																							
+					}
+					
+				});
+				
+			})
+			
+		');
+
 ?>
 <header id="header" data-plugin-options="{'stickyEnabled': true, 'stickyEnableOnBoxed': true, 'stickyEnableOnMobile': true, 'stickyStartAt': 55, 'stickySetTop': '-55px', 'stickyChangeLogo': true}">
 	<div class="header-body">
@@ -56,7 +79,7 @@
 								<nav class="collapse">
 									<ul class="nav nav-pills" id="mainNav">
                                         <li>
-											<a class="dropdown-item  active" href="<?= Yii::$app->homeUrl; ?>">
+											<a class="dropdown-item" href="<?= Yii::$app->homeUrl; ?>">
 												Home
 											</a>
                                         </li>
@@ -70,7 +93,7 @@
 													<a class="dropdown-item" href="tentang-kami">Profil Perusahaan</a>													
 												</li>
 												<li>
-													<a class="dropdown-item" href="jajaran-manajement">Jajaran Manajemen</a>													
+													<a class="dropdown-item" href="jajaran-manajemen">Jajaran Manajemen</a>													
 												</li>												
 											</ul>
 										</li>
@@ -83,7 +106,7 @@
 													foreach($category as $categorys):
 												?>
 												<li class="dropdown-submenu">
-													<a class="dropdown-item" href="kategori<?= $categorys->name?>"><?= $categorys->name ?></a>
+													<a class="dropdown-item" href="kategori-<?= $categorys->name?>"><?= $categorys->name ?></a>
 													<ul class="dropdown-menu">
 														<?php
 															$produk = Produk::find()
@@ -92,7 +115,7 @@
 															
 															foreach($produk as $produks):
 														?>
-														<li><a class="dropdown-item" href="produk-<?= $produks->title ?>" data-thumb-preview="img/previews/<?= $produks->image ?>"><?= $produks->title ?></a></li>													
+														<li><a class="dropdown-item" href="produk-<?= $categorys->idcategory ?>-<?= $produks->title ?>" data-thumb-preview="img/previews/<?= $produks->image ?>"><?= $produks->title ?></a></li>													
 														<?php
 															endforeach;
 														?>

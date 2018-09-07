@@ -22,7 +22,7 @@ CREATE TABLE IF NOT EXISTS `aboutus` (
 -- Dumping data for table ktn.aboutus: ~1 rows (approximately)
 /*!40000 ALTER TABLE `aboutus` DISABLE KEYS */;
 INSERT INTO `aboutus` (`idabout`, `kategori`, `full_description`, `short_description`) VALUES
-	(3, 'Jajaran', 'asdasd', 'asdada');
+	(3, 'profile', 'asdasd', 'asdada');
 /*!40000 ALTER TABLE `aboutus` ENABLE KEYS */;
 
 
@@ -38,7 +38,7 @@ CREATE TABLE IF NOT EXISTS `blog` (
   PRIMARY KEY (`idblog`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
--- Dumping data for table ktn.blog: ~0 rows (approximately)
+-- Dumping data for table ktn.blog: ~1 rows (approximately)
 /*!40000 ALTER TABLE `blog` DISABLE KEYS */;
 INSERT INTO `blog` (`idblog`, `img_display`, `title`, `short_description`, `full_description`, `tanggal`, `author`) VALUES
 	(1, '', 'asd', 'ads', 'asd', NULL, NULL);
@@ -66,7 +66,7 @@ CREATE TABLE IF NOT EXISTS `faq` (
   PRIMARY KEY (`idfaq`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
--- Dumping data for table ktn.faq: ~0 rows (approximately)
+-- Dumping data for table ktn.faq: ~1 rows (approximately)
 /*!40000 ALTER TABLE `faq` DISABLE KEYS */;
 INSERT INTO `faq` (`idfaq`, `question`, `answer`) VALUES
 	(1, 'asd', 'asd');
@@ -81,7 +81,7 @@ CREATE TABLE IF NOT EXISTS `karir` (
   PRIMARY KEY (`idkarir`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
--- Dumping data for table ktn.karir: ~0 rows (approximately)
+-- Dumping data for table ktn.karir: ~1 rows (approximately)
 /*!40000 ALTER TABLE `karir` DISABLE KEYS */;
 INSERT INTO `karir` (`idkarir`, `title`, `descripition`) VALUES
 	(1, 'asd', 'adsasd');
@@ -100,7 +100,7 @@ CREATE TABLE IF NOT EXISTS `kontak` (
   PRIMARY KEY (`idkontak`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
--- Dumping data for table ktn.kontak: ~0 rows (approximately)
+-- Dumping data for table ktn.kontak: ~1 rows (approximately)
 /*!40000 ALTER TABLE `kontak` DISABLE KEYS */;
 INSERT INTO `kontak` (`idkontak`, `alamat`, `tlp`, `email`, `facebook`, `twitter`, `linkedin`) VALUES
 	(1, 'asd', 'asd', 'asdas', 'sdasd', 'asd', 'asdasd');
@@ -120,6 +120,8 @@ CREATE TABLE IF NOT EXISTS `layanan` (
 
 -- Dumping data for table ktn.layanan: ~0 rows (approximately)
 /*!40000 ALTER TABLE `layanan` DISABLE KEYS */;
+INSERT INTO `layanan` (`idlayanan`, `img`, `title`, `short_desc`, `full_desc`, `status`) VALUES
+	(1, '', 'asfasfd', 'asdf', 'asdfaf', 1);
 /*!40000 ALTER TABLE `layanan` ENABLE KEYS */;
 
 
@@ -131,7 +133,7 @@ CREATE TABLE IF NOT EXISTS `logo` (
   PRIMARY KEY (`idlogo`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
--- Dumping data for table ktn.logo: ~0 rows (approximately)
+-- Dumping data for table ktn.logo: ~1 rows (approximately)
 /*!40000 ALTER TABLE `logo` DISABLE KEYS */;
 INSERT INTO `logo` (`idlogo`, `file_img`, `alt`) VALUES
 	(1, '', 'asd');
@@ -197,6 +199,9 @@ CREATE TABLE IF NOT EXISTS `slider` (
 
 -- Dumping data for table ktn.slider: ~0 rows (approximately)
 /*!40000 ALTER TABLE `slider` DISABLE KEYS */;
+INSERT INTO `slider` (`idslider`, `title1`, `title2`, `img_slider`, `alt`) VALUES
+	(1, 'asd', 'asd', 'asdad.jpg', 'asd'),
+	(2, 'ZZZzX', 'CCC', 'xxcx.jpg', 'asdad');
 /*!40000 ALTER TABLE `slider` ENABLE KEYS */;
 
 
@@ -217,7 +222,7 @@ CREATE TABLE IF NOT EXISTS `user` (
   UNIQUE KEY `password_reset_token` (`password_reset_token`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- Dumping data for table ktn.user: ~0 rows (approximately)
+-- Dumping data for table ktn.user: ~1 rows (approximately)
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
 INSERT INTO `user` (`id`, `username`, `auth_key`, `password_hash`, `password_reset_token`, `email`, `status`, `created_at`, `updated_at`) VALUES
 	(1, 'admin', 'yiIkeUvUprT44FXpclvQqWP9HaGvXx8t', '$2y$13$K5QTonm/ygHo3EA96RrfBOROSberlDKFEZM3wNR3jrZBkAvei4Bym', NULL, 'admin.center@pt-ktn.com', 10, 1535686754, 1535686754);
