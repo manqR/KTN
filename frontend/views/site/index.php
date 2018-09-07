@@ -143,6 +143,10 @@
                     <div class="col-half-section col-half-section-right">
                         <h2 class="heading-dark">Latest <strong>Posts</strong></h2>
                         <div class="row">
+                           
+                           <?php
+                            foreach($blog as $blogs):
+                           ?>
                             <div class="col-sm-6">
                                 <div class="recent-posts">
                                     <article class="post">
@@ -155,18 +159,8 @@
                                     </article>
                                 </div>
                             </div>
-                            <div class="col-sm-6">
-                                <div class="recent-posts">
-                                    <article class="post">
-                                        <div class="date">
-                                            <span class="day">15</span>
-                                            <span class="month">Jan</span>
-                                        </div>
-                                        <h4 class="heading-primary"><a href="blog-post.html">Lorem ipsum dolor sit amet, consectetur</a></h4>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget risus porta. <a href="/" class="read-more">read more <i class="fas fa-angle-right"></i></a></p>
-                                    </article>
-                                </div>
-                            </div>
+                            <?php endforeach; ?>
+
                         </div>
                     </div>
                 </div>
@@ -178,6 +172,13 @@
                     <div class="col-half-section">
                         <h2 class="heading-dark">Our <strong>Clients</strong></h2>
                         <div class="content-grid content-grid-dashed mt-5 mb-4">
+                           
+                           <?php
+                            $even =0;
+                            foreach($client as $clients):
+                            $even++;
+                            if($even %2== 0){
+                           ?>
                             <div class="row content-grid-row">
                                 <div class="content-grid-item col-sm-6 text-center">
                                     <img class="img-fluid" src="img/logos/logo-1.png" alt="">
@@ -186,6 +187,7 @@
                                     <img class="img-fluid" src="img/logos/logo-2.png" alt="">
                                 </div>
                             </div>
+                            <?php }else{ ?>
                             <div class="row content-grid-row">
                                 <div class="content-grid-item col-sm-6 text-center">
                                     <img class="img-fluid" src="img/logos/logo-5.png" alt="">
@@ -194,6 +196,9 @@
                                     <img class="img-fluid" src="img/logos/logo-6.png" alt="">
                                 </div>
                             </div>
+                            <?php } 
+                                endforeach;
+                            ?>
                         </div>
                     </div>
                 </div>
@@ -206,36 +211,17 @@
         <div class="col">
             <h2 class="mt-5">Our <strong>Product</strong></h2>
             <div class="owl-carousel owl-theme mb-0" data-plugin-options="{'items': 4, 'margin': 0, 'loop': false}">
+                <?php
+                    foreach($produk as $produk):
+                ?>
                 <div>
                     <a href="portfolio-single.html">
                     <img src="img/projects/project-9.jpg" class="img-fluid" alt="">
                     </a>
                 </div>
-                <div>
-                    <a href="portfolio-single.html">
-                    <img src="img/projects/project-12.jpg" class="img-fluid" alt="">
-                    </a>
-                </div>
-                <div>
-                    <a href="portfolio-single.html">
-                    <img src="img/projects/project-11.jpg" class="img-fluid" alt="">
-                    </a>
-                </div>
-                <div>
-                    <a href="portfolio-single.html">
-                    <img src="img/projects/project-8.jpg" class="img-fluid" alt="">
-                    </a>
-                </div>
-                <div>
-                    <a href="portfolio-single.html">
-                    <img src="img/projects/project-9.jpg" class="img-fluid" alt="">
-                    </a>
-                </div>
-                <div>
-                    <a href="portfolio-single.html">
-                    <img src="img/projects/project-12.jpg" class="img-fluid" alt="">
-                    </a>
-                </div>
+               <?php
+                endforeach;
+               ?>
             </div>
         </div>
     </div>

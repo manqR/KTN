@@ -2,10 +2,20 @@
 <?php
 
 	use frontend\models\Logo;
+	use frontend\models\Kontak;
+	use frontend\models\ProdukKategori;
+	use frontend\models\Produk;
 
+    $logo = Logo::find()
+		->One();
 
-   $logo = Logo::find()
-   			->One();
+	$kontak = Kontak::find()
+		->One();    
+		
+	$category = ProdukKategori::find()
+			->where(['status'=>1])
+			->all();
+
 ?>
 <header id="header" data-plugin-options="{'stickyEnabled': true, 'stickyEnableOnBoxed': true, 'stickyEnableOnMobile': true, 'stickyStartAt': 55, 'stickySetTop': '-55px', 'stickyChangeLogo': true}">
 	<div class="header-body">
@@ -25,7 +35,7 @@
 						<nav class="header-nav-top">
 							<ul class="nav nav-pills">								
 								<li class="nav-item">
-									<span class="ws-nowrap"><i class="fas fa-phone"></i> (123) 456-789</span>
+									<span class="ws-nowrap"><i class="fas fa-phone"></i> <?= $kontak->tlp ?></span>
 								</li>
 							</ul>
 						</nav>
@@ -46,69 +56,60 @@
 								<nav class="collapse">
 									<ul class="nav nav-pills" id="mainNav">
                                         <li>
-											<a class="dropdown-item  active" href="index.html">
+											<a class="dropdown-item  active" href="<?= Yii::$app->homeUrl; ?>">
 												Home
 											</a>
                                         </li>
 										<li class="dropdown">
-											<a class="dropdown-item dropdown-toggle" href="index.html">
+											<a class="dropdown-item dropdown-toggle" href="#">
 												Tentang Kami
 											</a>
 											<ul class="dropdown-menu">
 												
 												<li>
-													<a class="dropdown-item" href="index-classic.html">Profil Perusahaan</a>													
+													<a class="dropdown-item" href="tentang-kami">Profil Perusahaan</a>													
 												</li>
 												<li>
-													<a class="dropdown-item" href="index-corporate.html">Jajaran Manajemen</a>													
+													<a class="dropdown-item" href="jajaran-manajement">Jajaran Manajemen</a>													
 												</li>												
 											</ul>
 										</li>
 										<li class="dropdown">
-											<a class="dropdown-item dropdown-toggle" href="index.html">
+											<a class="dropdown-item dropdown-toggle" href="#">
 												Produk
 											</a>
 											<ul class="dropdown-menu">
-												
+												<?php
+													foreach($category as $categorys):
+												?>
 												<li class="dropdown-submenu">
-													<a class="dropdown-item" href="index-classic.html">Classic</a>
+													<a class="dropdown-item" href="kategori<?= $categorys->name?>"><?= $categorys->name ?></a>
 													<ul class="dropdown-menu">
-														<li><a class="dropdown-item" href="index-classic.html" data-thumb-preview="img/previews/preview-classic.jpg">Classic - Original</a></li>
-														<li><a class="dropdown-item" href="index-classic-color.html" data-thumb-preview="img/previews/preview-classic-color.jpg">Classic - Color</a></li>
-														<li><a class="dropdown-item" href="index-classic-light.html" data-thumb-preview="img/previews/preview-classic-light.jpg">Classic - Light</a></li>
-														<li><a class="dropdown-item" href="index-classic-video.html" data-thumb-preview="img/previews/preview-classic-video.jpg">Classic - Video</a></li>
-														<li><a class="dropdown-item" href="index-classic-video-light.html" data-thumb-preview="img/previews/preview-classic-video-light.jpg">Classic - Video - Light</a></li>
+														<?php
+															$produk = Produk::find()
+																->where(['idkategori'=>$categorys->idcategory])
+																->all();
+															
+															foreach($produk as $produks):
+														?>
+														<li><a class="dropdown-item" href="produk-<?= $produks->title ?>" data-thumb-preview="img/previews/<?= $produks->image ?>"><?= $produks->title ?></a></li>													
+														<?php
+															endforeach;
+														?>
 													</ul>
 												</li>
-												<li class="dropdown-submenu">
-													<a class="dropdown-item" href="index-corporate.html">Corporate</a>
-													<ul class="dropdown-menu">
-														<li><a class="dropdown-item" href="index-corporate.html" data-thumb-preview="img/previews/preview-corporate.jpg">Corporate - Version 1</a></li>
-														<li><a class="dropdown-item" href="index-corporate-2.html" data-thumb-preview="img/previews/preview-corporate-version2.jpg">Corporate - Version 2</a></li>
-														<li><a class="dropdown-item" href="index-corporate-3.html" data-thumb-preview="img/previews/preview-corporate-version3.jpg">Corporate - Version 3</a></li>
-														<li><a class="dropdown-item" href="index-corporate-4.html" data-thumb-preview="img/previews/preview-corporate-version4.jpg">Corporate - Version 4</a></li>
-														<li><a class="dropdown-item" href="index-corporate-5.html" data-thumb-preview="img/previews/preview-corporate-version5.jpg">Corporate - Version 5</a></li>
-														<li><a class="dropdown-item" href="index-corporate-6.html" data-thumb-preview="img/previews/preview-corporate-version6.jpg">Corporate - Version 6</a></li>
-														<li><a class="dropdown-item" href="index-corporate-7.html" data-thumb-preview="img/previews/preview-corporate-version7.jpg">Corporate - Version 7</a></li>
-														<li><a class="dropdown-item" href="index-corporate-8.html" data-thumb-preview="img/previews/preview-corporate-version8.jpg">Corporate - Version 8</a></li>
-														<li><a class="dropdown-item" href="index-corporate-hosting.html" data-thumb-preview="img/previews/preview-corporate-hosting.jpg">Corporate - Hosting</a></li>
-													</ul>
-												</li>
-												<li class="dropdown-submenu">
-													<a class="dropdown-item" href="#">One Page</a>
-													<ul class="dropdown-menu">
-														<li><a class="dropdown-item" href="index-one-page.html" data-thumb-preview="img/previews/preview-one-page.jpg">One Page Original</a></li>
-													</ul>
-												</li>
+												<?php
+													endforeach;
+												?>
 											</ul>
 										</li>
                                         <li>
-											<a class="dropdown-item" href="index.html">
+											<a class="dropdown-item" href="karir">
 												Karir
 											</a>
                                         </li>										
                                         <li>
-											<a class="dropdown-item" href="index.html">
+											<a class="dropdown-item" href="hubungi-kami">
 												Hubungi Kami
 											</a>
                                         </li>										
@@ -116,9 +117,9 @@
 								</nav>
 							</div>
 							<ul class="header-social-icons social-icons d-none d-sm-block">
-								<li class="social-icons-facebook"><a href="http://www.facebook.com/" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a></li>
-								<li class="social-icons-twitter"><a href="http://www.twitter.com/" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a></li>
-								<li class="social-icons-linkedin"><a href="http://www.linkedin.com/" target="_blank" title="Linkedin"><i class="fab fa-linkedin-in"></i></a></li>
+								<li class="social-icons-facebook"><a href="<?= $kontak->facebook ?>" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a></li>
+								<li class="social-icons-twitter"><a href="<?= $kontak->twitter ?>" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a></li>
+								<li class="social-icons-linkedin"><a href="<?= $kontak->linkedin ?>" target="_blank" title="Linkedin"><i class="fab fa-linkedin-in"></i></a></li>
 							</ul>
 							<button class="btn header-btn-collapse-nav" data-toggle="collapse" data-target=".header-nav-main nav">
 								<i class="fas fa-bars"></i>

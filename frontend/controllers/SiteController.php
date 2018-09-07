@@ -14,7 +14,6 @@ use frontend\models\SignupForm;
 use frontend\models\ContactForm;
 
 use frontend\models\Slider;
-use frontend\models\Kontak;
 use frontend\models\Aboutus;
 use frontend\models\Layanan;
 use frontend\models\Client;
@@ -85,9 +84,7 @@ class SiteController extends Controller
 
         $slider = Slider::find()
                 ->all();
-        
-        $kontak = Kontak::find()
-                ->One();      
+              
         
         $about = Aboutus::find()
                 ->where(['kategori'=>'profile'])
@@ -107,8 +104,7 @@ class SiteController extends Controller
 
 
         return $this->render('index',[            
-            'slider' => $slider,
-            'kontak' => $kontak,
+            'slider' => $slider,            
             'about' => $about,
             'layanan' => $layanan,
             'client' => $client,
