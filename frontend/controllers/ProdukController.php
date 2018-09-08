@@ -9,4 +9,8 @@ class ProdukController extends \yii\web\Controller
         return $this->render('index');
     }
 
+    public function actionDetail(){
+        return $this->render('detail');
+    }
+
 }

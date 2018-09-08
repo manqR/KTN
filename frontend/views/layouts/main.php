@@ -14,6 +14,9 @@
 
 	AppAsset::register($this);	
 	$directoryAsset = Yii::$app->assetManager->getPublishedUrl('@web/frontend/layout');
+
+	$crumbs = explode("/",$_SERVER["REQUEST_URI"]);
+	
 	
 ?>
 <?php $this->beginPage() ?>
@@ -47,9 +50,27 @@
                 ['directoryAsset' => $directoryAsset]) 
 			?>
 			<div role="main" class="main">
-                <?= Breadcrumbs::widget([
-                    'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
-                ]) ?>
+				<?php
+					if($crumbs[2] != ""){
+				?>
+				<section class="page-header">
+					<div class="container">
+						<div class="row">
+							<div class="col">
+								<?= Breadcrumbs::widget([
+									'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
+								]) ?>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col">
+								<h1><?= $this->title ?></h1>
+							</div>
+						</div>
+					</div>
+				</section>
+				<?php } ?>
+							
                 <?= Alert::widget() ?>
                 <?= $content ?>
             </div>

@@ -88,6 +88,9 @@ return [
                 'faq-update-<id>'=>'faq/update',
                 'kontak-update-<id>'=>'kontak/update',
 
+                // LOGIN
+                'login'=>'site/login',
+
 			],
 		],
         'request' => [

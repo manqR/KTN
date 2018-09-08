@@ -8,20 +8,31 @@
 use yii\helpers\Html;
 
 $this->title = $name;
+$this->params['breadcrumbs'][] = $this->title;
+
 ?>
-<div class="site-error">
 
-    <h1><?= Html::encode($this->title) ?></h1>
+<div class="container">
 
-    <div class="alert alert-danger">
-        <?= nl2br(Html::encode($message)) ?>
-    </div>
-
-    <p>
-        The above error occurred while the Web server was processing your request.
-    </p>
-    <p>
-        Please contact us if you think this is a server error. Thank you.
-    </p>
+    <section class="page-not-found">
+        <div class="row justify-content-center">
+            <div class="col-lg-7 text-center">
+                <div class="page-not-found-main">
+                    <h2>404 <i class="fas fa-file"></i></h2>
+                    <p>We're sorry, but the page you were looking for doesn't exist.</p>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <h4 class="heading-primary">Here are some useful links</h4>
+                <ul class="nav nav-list flex-column">
+                    <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">FAQ's</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Sitemap</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
 
 </div>

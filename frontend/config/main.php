@@ -44,8 +44,10 @@ return [
                 'jajaran-manajemen'=>'tentangkami/manajemen',
                 'kategori-<name>'=>'kategori/index',
                 'produk-<kat>-<name>'=>'produk/index',
+                'produk_detail-<name>'=>'produk/detail',
                 'karir'=>'karir/index',
                 'hubungi-kami'=>'hubungikami/index',
+                
             ],
         ],        
     ],
