@@ -48,7 +48,7 @@
 					<div class="header-row">
 						<div class="header-logo">
 							<a href="<?= Yii::$app->homeUrl; ?>">
-								<img alt="Porto" width="180" data-sticky-width="150"  data-sticky-top="33" src="img/<?= $logo->file_img ?>">
+								<img alt="Porto" width="180" data-sticky-width="150"  data-sticky-top="33" src="img/logo/<?= $logo->file_img ?>">
 							</a>
 						</div>
 					</div>

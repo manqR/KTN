@@ -156,6 +156,11 @@
                         <span>Slider</span>
                         </a>
                     </li>                                
+                    <li>
+                        <a href="klien">
+                        <span>Klien</span>
+                        </a>
+                    </li>                                
                 </ul>
             </li>
             <!-- /setup -->

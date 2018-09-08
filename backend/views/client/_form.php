@@ -8,14 +8,13 @@ use yii\widgets\ActiveForm;
 /* @var $form yii\widgets\ActiveForm */
 ?>
 
-<div class="client-form">
+<div class="card-block">
 
     <?php $form = ActiveForm::begin(); ?>
 
     <?= $form->field($model, 'nama_klien')->textInput(['maxlength' => true]) ?>
-
-    <?= $form->field($model, 'file_img')->textInput(['maxlength' => true]) ?>
-
+    
+    <?= $form->field($model, 'file_img')->fileInput(['class'=>'form-control'])->label('Upload Image') ?>
     <div class="form-group">
         <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
     </div>

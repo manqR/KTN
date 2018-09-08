@@ -8,6 +8,7 @@ use backend\models\SliderSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\web\UploadedFile;
 
 /**
  * SliderController implements the CRUD actions for Slider model.
@@ -66,10 +67,23 @@ class SliderController extends Controller
     {
         $model = new Slider();
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+        if ($model->load(Yii::$app->request->post())){
+            
+            $uploadDir = Yii::getAlias('../../img');
+            if(!is_dir($uploadDir."/slider/")) {
+                mkdir($uploadDir."/slider/");
+            }
+                       
+            $model->img_slider = UploadedFile::getInstance($model,'img_slider');
+            $filename = md5(uniqid($model->img_slider));
+
+            $model->img_slider->saveAs($uploadDir.'/slider/'.$filename.'.'.$model->img_slider->extension);	
+            $model->img_slider= $filename. '.'.$model->img_slider->extension;
+            $model->save();            
+            
             return $this->redirect(['view', 'id' => $model->idslider]);
         }
-
+          
         return $this->render('create', [
             'model' => $model,
         ]);
@@ -86,7 +100,21 @@ class SliderController extends Controller
     {
         $model = $this->findModel($id);
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+        if ($model->load(Yii::$app->request->post())){
+
+
+            $uploadDir = Yii::getAlias('../../img');
+            if(!is_dir($uploadDir."/slider/")) {
+                mkdir($uploadDir."/slider/");
+            }
+                       
+            $model->img_slider = UploadedFile::getInstance($model,'img_slider');
+            $filename = md5(uniqid($model->img_slider));
+
+            $model->img_slider->saveAs($uploadDir.'/slider/'.$filename.'.'.$model->img_slider->extension);	
+            $model->img_slider= $filename. '.'.$model->img_slider->extension;
+            $model->save();            
+            
             return $this->redirect(['view', 'id' => $model->idslider]);
         }
 

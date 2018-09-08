@@ -24,20 +24,25 @@ $this->registerJsFile($root."/scripts/forms/plugins.js",
 'position' => View::POS_END]);
 
 
-$this->registerJs("
-    $('.summernote').summernote();
-    
+
+
+$this->registerJs(" $(function(){
+    $('.edit')
+      .on('froalaEditor.initialized', function (e, editor) {
+        
+      })
+      .froalaEditor({enter: $.FroalaEditor.ENTER_P, placeholderText: null})
+     });
 ");
-$this->registerCssFile($root."/vendors/summernote/dist/summernote.css");
 ?>
 
 <div class="card-block">
 
     <?php $form = ActiveForm::begin(); ?>
     
-        <?= $form->field($model, 'kategori')->dropDownList(['Jajaran' => 'Jajaran', 'Profile' => 'Profile']); ?>
-        <?= $form->field($model, 'short_description')->textarea(['rows' => 6])->label('Short Description') ?>
-        <?= $form->field($model, 'full_description')->textarea(['rows' => 6])->label('Full Description') ?>
+        <?= $form->field($model, 'kategori')->dropDownList(['jajaran' => 'Jajaran', 'profile' => 'Profile']); ?>
+        <?= $form->field($model, 'short_description')->textarea(['rows' => 6,'class'=>'edit'])->label('Short Description') ?>
+        <?= $form->field($model, 'full_description')->textarea(['rows' => 6,'class'=>'edit'])->label('Full Description') ?>
         <!-- <label>Description</label>    
         <div class="m-b-3">
            

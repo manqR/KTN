@@ -30,7 +30,8 @@ return [
 				'karir'=>'karir/index',
 				'blog'=>'blog/index',
 				'faq'=>'faq/index',
-				'kontak'=>'kontak/index',
+                'kontak'=>'kontak/index',
+                'klien' => 'client/index',
 				
 
 				// CREATE
@@ -43,7 +44,8 @@ return [
                 'karir-add'=>'karir/create',		
                 'blog-add'=>'blog/create',		
                 'faq-add'=>'faq/create',		
-                'kontak-add'=>'kontak/create',		                	
+                'kontak-add'=>'kontak/create',
+                'klien-add' => 'client/create',               	
                 
 
 
@@ -59,6 +61,7 @@ return [
                 'blog-list-<id>'=>'blog/view',
                 'faq-list-<id>'=>'faq/view',
                 'kontak-list-<id>'=>'kontak/view',
+                'klien-list-<id>'=>'client/view',
 
 
 
@@ -74,6 +77,7 @@ return [
                 'blog-delete-<id>'=>'blog/delete',
                 'faq-delete-<id>'=>'faq/delete',
                 'kontak-delete-<id>'=>'kontak/delete',
+                'klien-delete-<id>'=>'client/delete',
                
                
                 // UPDATE
@@ -87,6 +91,7 @@ return [
                 'blog-update-<id>'=>'blog/update',
                 'faq-update-<id>'=>'faq/update',
                 'kontak-update-<id>'=>'kontak/update',
+                'klien-update-<id>'=>'client/update',
 
                 // LOGIN
                 'login'=>'site/login',

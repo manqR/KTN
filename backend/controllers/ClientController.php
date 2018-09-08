@@ -8,6 +8,7 @@ use backend\models\ClientSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\web\UploadedFile;
 
 /**
  * ClientController implements the CRUD actions for Client model.
@@ -66,7 +67,20 @@ class ClientController extends Controller
     {
         $model = new Client();
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+        if ($model->load(Yii::$app->request->post())){
+            
+            $uploadDir = Yii::getAlias('../../img');
+            if(!is_dir($uploadDir."/client/")) {
+                mkdir($uploadDir."/client/");
+            }
+                       
+            $model->file_img = UploadedFile::getInstance($model,'file_img');
+            $filename = md5(uniqid($model->file_img));
+
+            $model->file_img->saveAs($uploadDir.'/client/'.$filename.'.'.$model->file_img->extension);	
+            $model->file_img= $filename. '.'.$model->file_img->extension;
+            $model->save();            
+            
             return $this->redirect(['view', 'id' => $model->idclient]);
         }
 
@@ -86,7 +100,20 @@ class ClientController extends Controller
     {
         $model = $this->findModel($id);
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+        if ($model->load(Yii::$app->request->post())){
+            
+            $uploadDir = Yii::getAlias('../../img');
+            if(!is_dir($uploadDir."/client/")) {
+                mkdir($uploadDir."/client/");
+            }
+                       
+            $model->file_img = UploadedFile::getInstance($model,'file_img');
+            $filename = md5(uniqid($model->file_img));
+
+            $model->file_img->saveAs($uploadDir.'/client/'.$filename.'.'.$model->file_img->extension);	
+            $model->file_img= $filename. '.'.$model->file_img->extension;
+            $model->save();            
+            
             return $this->redirect(['view', 'id' => $model->idclient]);
         }
 

@@ -18,6 +18,8 @@ class AppAsset extends AssetBundle
         'vendors/animate.css/animate.css',
         'styles/app.css',
         'styles/app.skins.css',
+        'css/froala_editor.css',
+        'css/froala_style.css',
     ];
     public $js = [
 		// 'vendors/jquery/dist/jquery.js',
@@ -26,6 +28,7 @@ class AppAsset extends AssetBundle
 		'vendors/bootstrap/dist/js/bootstrap.js',
 		'vendors/fastclick/lib/fastclick.js',
         'scripts/constants.js',		
+        'scripts/froala_editor.min.js',
         'scripts/main.js',
     ];
     public $depends = [

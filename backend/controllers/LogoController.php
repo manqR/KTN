@@ -8,6 +8,8 @@ use backend\models\LogoSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\web\UploadedFile;
+
 
 /**
  * LogoController implements the CRUD actions for Logo model.
@@ -66,7 +68,20 @@ class LogoController extends Controller
     {
         $model = new Logo();
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+        if ($model->load(Yii::$app->request->post())){
+
+            $uploadDir = Yii::getAlias('../../img');
+            if(!is_dir($uploadDir."/logo/")) {
+                mkdir($uploadDir."/logo/");
+            }
+                       
+            $model->file_img = UploadedFile::getInstance($model,'file_img');
+            $filename = md5(uniqid($model->file_img));
+
+            $model->file_img->saveAs($uploadDir.'/logo/'.$filename.'.'.$model->file_img->extension);	
+            $model->file_img= $filename. '.'.$model->file_img->extension;
+            $model->save();            
+            
             return $this->redirect(['view', 'id' => $model->idlogo]);
         }
 
@@ -86,7 +101,20 @@ class LogoController extends Controller
     {
         $model = $this->findModel($id);
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+        if ($model->load(Yii::$app->request->post())){
+
+            $uploadDir = Yii::getAlias('../../img');
+            if(!is_dir($uploadDir."/logo/")) {
+                mkdir($uploadDir."/logo/");
+            }
+                       
+            $model->file_img = UploadedFile::getInstance($model,'file_img');
+            $filename = md5(uniqid($model->file_img));
+
+            $model->file_img->saveAs($uploadDir.'/logo/'.$filename.'.'.$model->file_img->extension);	
+            $model->file_img= $filename. '.'.$model->file_img->extension;
+            $model->save();            
+
             return $this->redirect(['view', 'id' => $model->idlogo]);
         }
 

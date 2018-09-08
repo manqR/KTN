@@ -12,28 +12,12 @@
                 if($odd % 2 == 0){
             ?>
                 <li data-transition="fade">
-                    <img src="img/slides/slide-corporate-3.jpg"  
+                    <img src="img/slider/<?= $sliders->img_slider ?>"  
                         alt=""
                         data-bgposition="center center" 
                         data-bgfit="cover" 
                         data-bgrepeat="no-repeat" 
-                        class="rev-slidebg">
-                    <div class="tp-caption"
-                        data-x="['177','177','center','center']" data-hoffset="['0','0','-150','-220']"
-                        data-y="180"
-                        data-start="1000"
-                        data-transform_in="x:[-300%];opacity:0;s:500;"><img src="img/slides/slide-title-border-light.png" alt=""></div>
-                    <div class="tp-caption top-label"
-                        data-x="['227','227','center','center']"
-                        data-y="172"
-                        data-fontsize="['24','24','24','36']"	
-                        data-start="500"
-                        data-transform_in="y:[-300%];opacity:0;s:500;">DO YOU NEED A NEW</div>
-                    <div class="tp-caption"
-                        data-x="['480','480','center','center']" data-hoffset="['0','0','150','220']"
-                        data-y="180"
-                        data-start="1000"
-                        data-transform_in="x:[300%];opacity:0;s:500;"><img src="img/slides/slide-title-border-light.png" alt=""></div>
+                        class="rev-slidebg">                    
                     <div class="tp-caption main-label"
                         data-x="['135','135','center','center']"
                         data-y="['210','210','210','230']"
@@ -42,20 +26,20 @@
                         data-fontsize="['62','62','62','82']"					 
                         data-transform_in="y:[100%];s:500;"
                         data-transform_out="opacity:0;s:500;"
-                        data-mask_in="x:0px;y:0px;">WEB DESIGN?</div>
+                        data-mask_in="x:0px;y:0px;"><?= $sliders->title1 ?></div>
                     <div class="tp-caption bottom-label"
                         data-x="['185','185','center','center']"
                         data-y="['280','280','280','315']"
                         data-start="2000"
                         data-fontsize="['20','20','20','30']"
-                        data-transform_in="y:[100%];opacity:0;s:500;">Check out our options and features.</div>
+                        data-transform_in="y:[100%];opacity:0;s:500;"><?= $sliders->title2 ?></div>
                 </li>
             <?php
                 }else{
             ?>
 
                 <li data-transition="fade">
-                    <img src="img/slides/slide-corporate-4.jpg"  
+                    <img src="img/slider/<?= $sliders->img_slider ?>"  
                         alt=""
                         data-bgposition="center center" 
                         data-bgfit="cover" 
@@ -68,7 +52,7 @@
                         data-fontsize="['52','52','52','82']"
                         style="z-index: 5"
                         data-transform_in="y:[100%];s:500;"
-                        data-transform_out="opacity:0;s:500;">WELCOME TO PT-KTN</div>
+                        data-transform_out="opacity:0;s:500;"><?= $sliders->title1 ?></div>
                     <div class="tp-caption bottom-label"
                         data-x="center"
                         data-y="['270','270','270','290']"
@@ -82,7 +66,7 @@
                         data-splitout="none" 
                         data-responsive_offset="on"
                         style="font-size: 23px; line-height: 30px;"
-                        data-elementdelay="0.05">The #1 Selling HTML Site Template on ThemeForest</div>
+                        data-elementdelay="0.05"><?= $sliders->title2 ?></div>
                 </li>
             <?php } 
                 endforeach;
@@ -172,33 +156,32 @@
                     <div class="col-half-section">
                         <h2 class="heading-dark">Our <strong>Clients</strong></h2>
                         <div class="content-grid content-grid-dashed mt-5 mb-4">
+                                                      
+                            <div class="row content-grid-row">
+                                <?php      
+                                    foreach($client as $clients):                                    
+                                    if($clients->idclient %2== 0){
+                                ?>
+                                <div class="content-grid-item col-sm-6 text-center">
+                                    <img class="img-fluid" src="img/client/<?= $clients->file_img ?>" alt="<?= $clients->nama_klien ?>">
+                                </div>       
+                                <?php }                                 
+                                    endforeach; 
+                                ?>                        
+                            </div>
+                            <div class="row content-grid-row">
+                                <?php      
+                                    foreach($client as $clients):                                    
+                                    if($clients->idclient %2 != 0){
+                                ?>
+                                <div class="content-grid-item col-sm-6 text-center">
+                                    <img class="img-fluid" src="img/client/<?= $clients->file_img ?>" alt="<?= $clients->nama_klien ?>">
+                                </div>       
+                                <?php }                                 
+                                    endforeach; 
+                                ?>                        
+                            </div>
                            
-                           <?php
-                            $even =0;
-                            foreach($client as $clients):
-                            $even++;
-                            if($even %2== 0){
-                           ?>
-                            <div class="row content-grid-row">
-                                <div class="content-grid-item col-sm-6 text-center">
-                                    <img class="img-fluid" src="img/logos/logo-1.png" alt="">
-                                </div>
-                                <div class="content-grid-item col-sm-6 text-center">
-                                    <img class="img-fluid" src="img/logos/logo-2.png" alt="">
-                                </div>
-                            </div>
-                            <?php }else{ ?>
-                            <div class="row content-grid-row">
-                                <div class="content-grid-item col-sm-6 text-center">
-                                    <img class="img-fluid" src="img/logos/logo-5.png" alt="">
-                                </div>
-                                <div class="content-grid-item col-sm-6 text-center">
-                                    <img class="img-fluid" src="img/logos/logo-6.png" alt="">
-                                </div>
-                            </div>
-                            <?php } 
-                                endforeach;
-                            ?>
                         </div>
                     </div>
                 </div>
@@ -212,11 +195,11 @@
             <h2 class="mt-5">Our <strong>Product</strong></h2>
             <div class="owl-carousel owl-theme mb-0" data-plugin-options="{'items': 4, 'margin': 0, 'loop': false}">
                 <?php
-                    foreach($produk as $produk):
+                    foreach($produk as $produks):
                 ?>
                 <div>
-                    <a href="portfolio-single.html">
-                    <img src="img/projects/project-9.jpg" class="img-fluid" alt="">
+                    <a href="produk_detail-<?= $produks->title ?>">
+                    <img src="img/produk/<?= $produks->image ?>" class="img-fluid" alt="<?= $produks->title ?>">
                     </a>
                 </div>
                <?php

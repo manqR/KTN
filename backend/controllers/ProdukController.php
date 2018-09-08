@@ -8,6 +8,7 @@ use backend\models\ProdukSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\web\UploadedFile;
 
 /**
  * ProdukController implements the CRUD actions for Produk model.
@@ -66,7 +67,20 @@ class ProdukController extends Controller
     {
         $model = new Produk();
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+        if ($model->load(Yii::$app->request->post())){
+            
+            $uploadDir = Yii::getAlias('../../img');
+            if(!is_dir($uploadDir."/produk/")) {
+                mkdir($uploadDir."/produk/");
+            }
+                       
+            $model->image = UploadedFile::getInstance($model,'image');
+            $filename = md5(uniqid($model->image));
+
+            $model->image->saveAs($uploadDir.'/produk/'.$filename.'.'.$model->image->extension);	
+            $model->image= $filename. '.'.$model->image->extension;
+
+            $model->save();
             return $this->redirect(['view', 'id' => $model->idproduk]);
         }
 
@@ -86,7 +100,20 @@ class ProdukController extends Controller
     {
         $model = $this->findModel($id);
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+        if ($model->load(Yii::$app->request->post())){
+
+            $uploadDir = Yii::getAlias('../../img');
+            if(!is_dir($uploadDir."/produk/")) {
+                mkdir($uploadDir."/produk/");
+            }
+                       
+            $model->image = UploadedFile::getInstance($model,'image');
+            $filename = md5(uniqid($model->image));
+
+            $model->image->saveAs($uploadDir.'/produk/'.$filename.'.'.$model->image->extension);	
+            $model->image= $filename. '.'.$model->image->extension;
+            
+            $model->save();
             return $this->redirect(['view', 'id' => $model->idproduk]);
         }
 
