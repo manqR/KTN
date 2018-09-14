@@ -6,6 +6,17 @@ use yii\widgets\ActiveForm;
 /* @var $this yii\web\View */
 /* @var $model backend\models\Blog */
 /* @var $form yii\widgets\ActiveForm */
+
+
+$this->registerJs(" $(function(){
+    $('.edit')
+      .on('froalaEditor.initialized', function (e, editor) {
+        
+      })
+      .froalaEditor({enter: $.FroalaEditor.ENTER_P, placeholderText: null})
+  });
+");
+
 ?>
 
 
@@ -17,9 +28,10 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'title')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'short_description')->textarea(['rows' => 6]) ?>    
+    <?= $form->field($model, 'short_description')->textarea(['rows' => 6,'class'=>'edit']) ?>    
 
-    <?= $form->field($model, 'full_description')->textarea(['rows' => 6]) ?>
+    <?= $form->field($model, 'full_description')->textarea(['rows' => 6,'class'=>'edit']) ?>
+
    
 
     <div class="form-group">

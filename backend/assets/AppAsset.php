@@ -29,6 +29,7 @@ class AppAsset extends AssetBundle
 		'vendors/fastclick/lib/fastclick.js',
         'scripts/constants.js',		
         'scripts/froala_editor.min.js',
+        'scripts/align.min.js',
         'scripts/main.js',
     ];
     public $depends = [

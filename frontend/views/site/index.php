@@ -106,11 +106,11 @@
         <div class="col-lg-4">
             <div class="feature-box feature-box-style-2 appear-animation" data-appear-animation="fadeInUp" data-appear-animation-delay="0">
                 <div class="feature-box-icon">
-                    <i class="icon-user-following icons"></i>
+                    <i class="<?= $layanans->img?>"></i>
                 </div>
                 <div class="feature-box-info">
-                    <h4 class="mb-2">Customer Support</h4>
-                    <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing metus elit. Quisque rutrum pellentesque imperdiet.</p>
+                    <h4 class="mb-2"><?= $layanans->title?></h4>
+                    <?= $layanans->short_desc ?>
                 </div>
             </div>
         </div>
@@ -135,11 +135,11 @@
                                 <div class="recent-posts">
                                     <article class="post">
                                         <div class="date">
-                                            <span class="day">15</span>
-                                            <span class="month">Jan</span>
+                                            <span class="day"><?= date('Y',strtotime($blogs->tanggal)) ?></span>
+                                            <span class="month"><?= date('M',strtotime($blogs->tanggal)) ?></span>
                                         </div>
-                                        <h4 class="heading-primary"><a href="blog-post.html">Lorem ipsum dolor sit amet, consectetur</a></h4>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget risus porta. <a href="/" class="read-more">read more <i class="fas fa-angle-right"></i></a></p>
+                                        <h4 class="heading-primary"><a href=blog_detail-<?= urlencode($blogs->title) ?> ><?= $blogs->title ?></a></h4>
+                                        <p><?= $blogs->short_description ?> . <a href=blog_detail-<?= urlencode($blogs->title) ?> class="read-more">read more <i class="fas fa-angle-right"></i></a></p>
                                     </article>
                                 </div>
                             </div>

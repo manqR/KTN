@@ -8,6 +8,7 @@ use backend\models\BlogSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\web\UploadedFile;
 
 /**
  * BlogController implements the CRUD actions for Blog model.
@@ -66,7 +67,23 @@ class BlogController extends Controller
     {
         $model = new Blog();
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+        if ($model->load(Yii::$app->request->post())){
+            
+            $uploadDir = Yii::getAlias('../../img');
+            if(!is_dir($uploadDir."/blog/")) {
+                mkdir($uploadDir."/blog/");
+            }
+                       
+            $model->img_display = UploadedFile::getInstance($model,'img_display');
+            $filename = md5(uniqid($model->img_display));
+
+            $model->img_display->saveAs($uploadDir.'/blog/'.$filename.'.'.$model->img_display->extension);	
+            $model->img_display= $filename. '.'.$model->img_display->extension;
+            $model->tanggal = date('Y-m-d');
+            $model->author = Yii::$app->user->identity->username;
+            $model->save();            
+            
+            
             return $this->redirect(['view', 'id' => $model->idblog]);
         }
 
@@ -86,7 +103,21 @@ class BlogController extends Controller
     {
         $model = $this->findModel($id);
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+        if ($model->load(Yii::$app->request->post())){
+
+
+            $uploadDir = Yii::getAlias('../../img');
+            if(!is_dir($uploadDir."/blog/")) {
+                mkdir($uploadDir."/blog/");
+            }
+                       
+            $model->img_display = UploadedFile::getInstance($model,'img_display');
+            $filename = md5(uniqid($model->img_display));
+
+            $model->img_display->saveAs($uploadDir.'/blog/'.$filename.'.'.$model->img_display->extension);	
+            $model->img_display= $filename. '.'.$model->img_display->extension;            
+            $model->save();            
+            
             return $this->redirect(['view', 'id' => $model->idblog]);
         }
 

@@ -2,6 +2,8 @@
 
 namespace frontend\controllers;
 
+use frontend\models\Aboutus;
+
 class TentangkamiController extends \yii\web\Controller
 {
     public function actionManajemen()
@@ -10,7 +12,13 @@ class TentangkamiController extends \yii\web\Controller
     }
 
     public function actionProfile(){
-        return $this->render('profile');
+
+        $model = Aboutus::find()
+            ->where(['kategori'=>'profile'])
+            ->One();
+        return $this->render('profile',[
+            'model'=>$model,
+        ]);
     }
 
 }

@@ -3,6 +3,8 @@
 
     $this->title = "Tentang Kami";
     $this->params['breadcrumbs'][] = $this->title;
+
+    $this->registerCss(".title{text-align:center;}")
 ?>
 <div class="container">
 
@@ -41,14 +43,14 @@
 
     <div class="row mt-4">
         <div class="col-lg-7 col-xl-8">
-            <h3 class="heading-primary"><strong>Who</strong> We Are</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur pellentesque neque eget diam posuere porta. Quisque ut nulla at nunc <a href="#">vehicula</a> lacinia. Proin adipiscing porta tellus, ut feugiat nibh adipiscing sit amet. In eu justo a felis faucibus ornare vel id metus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In eu libero ligula. Fusce eget metus lorem, ac viverra leo. Nullam convallis, arcu vel pellentesque sodales, nisi est varius diam, ac ultrices sem ante quis sem. Proin ultricies volutpat sapien, nec scelerisque ligula mollis lobortis.</p>
-            <p>Curabitur pellentesque neque eget diam posuere porta. Quisque ut nulla at nunc vehicula lacinia. Proin adipiscing porta tellus, ut feugiat nibh adipiscing <span class="alternative-font">metus</span> sit amet. In eu justo a felis faucibus ornare vel id metus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In eu libero ligula. Fusce eget metus lorem, ac viverra leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In eu libero ligula. Fusce eget metus lorem, ac viverra leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In eu libero ligula.</p>
-        </div>
+            <h3 class="heading-primary title"><strong>Tentang</strong> Kami</h3>
+            <?= $model->full_description ?>
+        </div> 
+
         <div class="col-lg-5 col-xl-4">
             <div class="featured-box featured-box-primary">
                 <div class="box-content">
-                    <h4 class="text-uppercase">Behind the scenes</h4>
+                    <h4 class="text-uppercase">Team</h4>
                     <ul class="thumbnail-gallery mb-4 pb-3" data-plugin-lightbox data-plugin-options="{'delegate': 'a', 'type': 'image', 'gallery': {'enabled': true}}">
                         <li>
                             <a title="Benefits 1" href="img/benefits/benefits-1.jpg">
@@ -95,6 +97,8 @@
                     </ul>
                 </div>
             </div>
+
+
         </div>
     </div>   
 </div>

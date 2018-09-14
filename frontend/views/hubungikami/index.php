@@ -54,9 +54,9 @@
             <hr>
             <h4 class="heading-primary">The <strong>Office</strong></h4>
             <ul class="list list-icons list-icons-style-3 mt-4">
-                <li><i class="fas fa-map-marker-alt"></i> <strong>Address:</strong> 1234 Street Name, City Name, United States</li>
-                <li><i class="fas fa-phone"></i> <strong>Phone:</strong> (123) 456-789</li>
-                <li><i class="far fa-envelope"></i> <strong>Email:</strong> <a href="mailto:mail@example.com">mail@example.com</a></li>
+                <li><i class="fas fa-map-marker-alt"></i> <strong>Address:</strong> <?= $model->alamat ?></li>
+                <li><i class="fas fa-phone"></i> <strong>Phone:</strong> <?= $model->tlp ?></li>
+                <li><i class="far fa-envelope"></i> <strong>Email:</strong> <a href="<?= $model->email ?>"><?= $model->email ?></a></li>
             </ul>
             <hr>
             <h4 class="heading-primary">Business <strong>Hours</strong></h4>
