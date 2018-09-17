@@ -106,7 +106,7 @@
 													foreach($category as $categorys):
 												?>
 												<li class="dropdown-submenu">
-													<a class="dropdown-item" href="kategori-<?= $categorys->name?>"><?= $categorys->name ?></a>
+													<a class="dropdown-item" href="kategori-<?= urlencode($categorys->name)?>"><?= $categorys->name ?></a>
 													<ul class="dropdown-menu">
 														<?php
 															$produk = Produk::find()
@@ -115,7 +115,7 @@
 															
 															foreach($produk as $produks):
 														?>
-														<li><a class="dropdown-item" href="produk-<?= $categorys->idcategory ?>-<?= $produks->title ?>"><?= $produks->title ?></a></li>													
+														<li><a class="dropdown-item" href="produk-<?= urlencode($categorys->idcategory) ?>-<?= urlencode($produks->title) ?>"><?= $produks->title ?></a></li>													
 														<?php
 															endforeach;
 														?>
@@ -129,6 +129,11 @@
                                         <li>
 											<a class="dropdown-item" href="karir">
 												Karir
+											</a>
+                                        </li>										
+                                        <li>
+											<a class="dropdown-item" href="blog">
+												Blog
 											</a>
                                         </li>										
                                         <li>

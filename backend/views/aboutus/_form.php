@@ -40,7 +40,6 @@ $this->registerJs(" $(function(){
 
     <?php $form = ActiveForm::begin(); ?>
     
-        <?= $form->field($model, 'kategori')->dropDownList(['jajaran' => 'Jajaran', 'profile' => 'Profile']); ?>
         <?= $form->field($model, 'short_description')->textarea(['rows' => 6,'class'=>'edit'])->label('Short Description') ?>
         <?= $form->field($model, 'full_description')->textarea(['rows' => 6,'class'=>'edit'])->label('Full Description') ?>
         <!-- <label>Description</label>    

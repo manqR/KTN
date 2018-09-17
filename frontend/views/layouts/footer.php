@@ -59,9 +59,9 @@
 				<div class="col-lg-4">
 					<nav id="sub-menu">
 						<ul>
-							<li><a href="page-faq.html">FAQ's</a></li>
-							<li><a href="sitemap.html">Sitemap</a></li>
-							<li><a href="contact-us.html">Contact</a></li>
+							<li><a href="#">FAQ's</a></li>
+							<li><a href="#">Sitemap</a></li>
+							<li><a href="#">Contact</a></li>
 						</ul>
 					</nav>
 				</div>

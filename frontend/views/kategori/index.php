@@ -34,7 +34,7 @@
                     </a> -->
                     <span class="product-thumb-info">
                         
-                        <a href="produk_detail-qq">
+                        <a href="produk-<?= urlencode($models->idkategori) ?>-<?= urlencode($models->title) ?>">
                             <span class="product-thumb-info-image">
                                 <span class="product-thumb-info-act">
                                     <span class="product-thumb-info-act-left"><em>View</em></span>
@@ -44,7 +44,7 @@
                             </span>
                         </a>
                         <span class="product-thumb-info-content">
-                            <a href="produk_detail-qq">
+                            <a href="produk-<?= urlencode($models->idkategori) ?>-<?= urlencode($models->title)?>">
                                 <h4><?= $models->title ?></h4>
                                 <span class="price">
                                     <!-- <del><span class="amount">$325</span></del> -->

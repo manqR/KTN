@@ -47,6 +47,8 @@ return [
                 'produk-<kat>-<name>'=>'produk/index',                
                 'karir'=>'karir/index',
                 'hubungi-kami'=>'hubungikami/index',
+                'blog-<name>'=>'blog/detail',
+                'blog'=>'blog/index',
                 
             ],
         ],        

@@ -19,7 +19,7 @@
 			<div class="col-12 col-sm-6 col-lg-3 isotope-item leadership">
 				<span class="thumb-info thumb-info-hide-wrapper-bg mb-4">
 					<span class="thumb-info-wrapper">
-						<a href="about-me.html">
+						<a href="#">
 							<img src="img/jajaran/<?= $models->img ?>" class="img-fluid" alt="<?= $models->nama ?>">
 							<span class="thumb-info-title">
 								<span class="thumb-info-inner"><?= $models->nama ?></span>

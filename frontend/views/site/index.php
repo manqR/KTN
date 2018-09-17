@@ -138,8 +138,8 @@
                                             <span class="day"><?= date('Y',strtotime($blogs->tanggal)) ?></span>
                                             <span class="month"><?= date('M',strtotime($blogs->tanggal)) ?></span>
                                         </div>
-                                        <h4 class="heading-primary"><a href=blog_detail-<?= urlencode($blogs->title) ?> ><?= $blogs->title ?></a></h4>
-                                        <p><?= $blogs->short_description ?> . <a href=blog_detail-<?= urlencode($blogs->title) ?> class="read-more">read more <i class="fas fa-angle-right"></i></a></p>
+                                        <h4 class="heading-primary"><a href=blog-<?= urlencode($blogs->title) ?> ><?= $blogs->title ?></a></h4>
+                                        <p><?= $blogs->short_description ?> . <a href=blog-<?= urlencode($blogs->title) ?> class="read-more">read more <i class="fas fa-angle-right"></i></a></p>
                                     </article>
                                 </div>
                             </div>
