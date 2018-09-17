@@ -86,8 +86,7 @@ class SiteController extends Controller
                 ->all();
               
         
-        $about = Aboutus::find()
-                ->where(['kategori'=>'profile'])
+        $about = Aboutus::find()                
                 ->One();
         $layanan = Layanan::find()
                 ->where(['status'=>1])

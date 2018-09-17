@@ -2,11 +2,26 @@
 
 namespace frontend\controllers;
 
+use frontend\models\Produk;
+
+
 class KategoriController extends \yii\web\Controller
 {
-    public function actionIndex()
+    public function actionIndex($name)
     {
-        return $this->render('index');
+        $name = urldecode($name);
+        $model = Produk::find()
+                ->joinWith('produkKategori')
+                ->where(['name'=>$name])
+                ->all();
+        $count = Produk::find()
+                ->joinWith('produkKategori')
+                ->where(['name'=>$name])
+                ->count();
+        return $this->render('index',[
+            'model'=>$model,
+            'count'=>$count
+        ]);
     }
 
 }

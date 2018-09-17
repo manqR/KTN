@@ -5,12 +5,12 @@ namespace backend\models;
 use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use backend\models\Aboutus;
+use backend\models\Jajaran;
 
 /**
- * AboutusSearch represents the model behind the search form of `backend\models\Aboutus`.
+ * JajaranSearch represents the model behind the search form of `backend\models\Jajaran`.
  */
-class AboutusSearch extends Aboutus
+class JajaranSearch extends Jajaran
 {
     /**
      * @inheritdoc
@@ -18,8 +18,8 @@ class AboutusSearch extends Aboutus
     public function rules()
     {
         return [
-            [['idabout'], 'integer'],
-            [['full_description', 'short_description'], 'safe'],
+            [['id'], 'integer'],
+            [['img', 'nama', 'posisi', 'facebook', 'linkedin', 'twitter'], 'safe'],
         ];
     }
 
@@ -41,7 +41,7 @@ class AboutusSearch extends Aboutus
      */
     public function search($params)
     {
-        $query = Aboutus::find();
+        $query = Jajaran::find();
 
         // add conditions that should always apply here
 
@@ -59,11 +59,15 @@ class AboutusSearch extends Aboutus
 
         // grid filtering conditions
         $query->andFilterWhere([
-            'idabout' => $this->idabout,
+            'id' => $this->id,
         ]);
 
-        $query->andFilterWhere(['like', 'full_description', $this->full_description])
-            ->andFilterWhere(['like', 'short_description', $this->short_description]);
+        $query->andFilterWhere(['like', 'img', $this->img])
+            ->andFilterWhere(['like', 'nama', $this->nama])
+            ->andFilterWhere(['like', 'posisi', $this->posisi])
+            ->andFilterWhere(['like', 'facebook', $this->facebook])
+            ->andFilterWhere(['like', 'linkedin', $this->linkedin])
+            ->andFilterWhere(['like', 'twitter', $this->twitter]);
 
         return $dataProvider;
     }

@@ -49,4 +49,9 @@ class Produk extends \yii\db\ActiveRecord
             'description' => 'Description',
         ];
     }
+
+    public function getProdukKategori()
+    {
+        return $this->hasOne(ProdukKategori::className(), ['idcategory' => 'idkategori']);
+    }
 }

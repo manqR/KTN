@@ -115,7 +115,7 @@
 															
 															foreach($produk as $produks):
 														?>
-														<li><a class="dropdown-item" href="produk-<?= $categorys->idcategory ?>-<?= $produks->title ?>" data-thumb-preview="img/previews/<?= $produks->image ?>"><?= $produks->title ?></a></li>													
+														<li><a class="dropdown-item" href="produk-<?= $categorys->idcategory ?>-<?= $produks->title ?>"><?= $produks->title ?></a></li>													
 														<?php
 															endforeach;
 														?>

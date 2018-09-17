@@ -7,7 +7,6 @@
 				->One();      
 
 	$about = Aboutus::find()
-			->where(['kategori'=>'profile'])
 			->One();
 ?>
 

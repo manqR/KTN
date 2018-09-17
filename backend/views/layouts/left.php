@@ -100,7 +100,12 @@
                 <ul class="sub-menu">                   
 					<li>
                         <a href="profile">
-                        <span>Profile / Jajaran Manajemen</span>
+                        <span>Profile</span>
+                        </a>
+                    </li>                        			            
+					<li>
+                        <a href="jajaran">
+                        <span>Jajaran Manajemen</span>
                         </a>
                     </li>                        			            
 					<li>

@@ -2,15 +2,29 @@
 
 namespace frontend\controllers;
 
+use frontend\models\Produk;
+
 class ProdukController extends \yii\web\Controller
 {
-    public function actionIndex()
+    public function actionIndex($kat, $name)
     {
-        return $this->render('index');
-    }
+        $name = urldecode($name);
+        $kat = urldecode($kat);
+        $model = Produk::find()
+                ->joinWith('produkKategori')
+                ->where(['idkategori'=>$kat])
+                ->AndWhere(['title'=>$name])
+                ->One();
 
-    public function actionDetail(){
-        return $this->render('detail');
+        $related = Produk::find()
+                ->joinWith('produkKategori')
+                ->where(['idkategori'=> $kat])
+                ->all();
+
+        return $this->render('index',[
+            'model'=> $model,
+            'related' => $related
+        ]);
     }
 
 }

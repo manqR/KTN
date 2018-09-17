@@ -32,6 +32,7 @@ return [
 				'faq'=>'faq/index',
                 'kontak'=>'kontak/index',
                 'klien' => 'client/index',
+                'jajaran' => 'jajaran/index',
 				
 
 				// CREATE
@@ -46,6 +47,7 @@ return [
                 'faq-add'=>'faq/create',		
                 'kontak-add'=>'kontak/create',
                 'klien-add' => 'client/create',               	
+                'jajaran-add' => 'jajaran/create',               	
                 
 
 
@@ -62,6 +64,7 @@ return [
                 'faq-list-<id>'=>'faq/view',
                 'kontak-list-<id>'=>'kontak/view',
                 'klien-list-<id>'=>'client/view',
+                'jajaran-list-<id>'=>'jajaran/view',
 
 
 
@@ -78,6 +81,7 @@ return [
                 'faq-delete-<id>'=>'faq/delete',
                 'kontak-delete-<id>'=>'kontak/delete',
                 'klien-delete-<id>'=>'client/delete',
+                'jajaran-delete-<id>'=>'jajaran/delete',
                
                
                 // UPDATE
@@ -92,6 +96,7 @@ return [
                 'faq-update-<id>'=>'faq/update',
                 'kontak-update-<id>'=>'kontak/update',
                 'klien-update-<id>'=>'client/update',
+                'jajaran-update-<id>'=>'client/update',
 
                 // LOGIN
                 'login'=>'site/login',

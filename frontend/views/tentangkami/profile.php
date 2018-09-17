@@ -52,48 +52,18 @@
                 <div class="box-content">
                     <h4 class="text-uppercase">Team</h4>
                     <ul class="thumbnail-gallery mb-4 pb-3" data-plugin-lightbox data-plugin-options="{'delegate': 'a', 'type': 'image', 'gallery': {'enabled': true}}">
+                        <?php
+                        
+                            foreach($jajaran as $jajarans):
+                        ?>
                         <li>
-                            <a title="Benefits 1" href="img/benefits/benefits-1.jpg">
+                            <a title="<?= $jajarans->nama ?>" href="img/jajaran/<?= $jajarans->img ?>">
                                 <span class="thumbnail mb-0">
-                                    <img src="img/benefits/benefits-1-thumb.jpg" alt="">
+                                    <img src="img/jajaran/<?= $jajarans->img ?>" alt="<?= $jajarans->nama ?>" style="width: 5vw;">
                                 </span>
                             </a>
                         </li>
-                        <li>
-                            <a title="Benefits 2" href="img/benefits/benefits-2.jpg">
-                                <span class="thumbnail mb-0">
-                                    <img src="img/benefits/benefits-2-thumb.jpg" alt="">
-                                </span>
-                            </a>
-                        </li>
-                        <li>
-                            <a title="Benefits 3" href="img/benefits/benefits-3.jpg">
-                                <span class="thumbnail mb-0">
-                                    <img src="img/benefits/benefits-3-thumb.jpg" alt="">
-                                </span>
-                            </a>
-                        </li>
-                        <li>
-                            <a title="Benefits 4" href="img/benefits/benefits-4.jpg">
-                                <span class="thumbnail mb-0">
-                                    <img src="img/benefits/benefits-4-thumb.jpg" alt="">
-                                </span>
-                            </a>
-                        </li>
-                        <li>
-                            <a title="Benefits 5" href="img/benefits/benefits-5.jpg">
-                                <span class="thumbnail mb-0">
-                                    <img src="img/benefits/benefits-5-thumb.jpg" alt="">
-                                </span>
-                            </a>
-                        </li>
-                        <li>
-                            <a title="Benefits 6" href="img/benefits/benefits-6.jpg">
-                                <span class="thumbnail mb-0">
-                                    <img src="img/benefits/benefits-6-thumb.jpg" alt="">
-                                </span>
-                            </a>
-                        </li>
+                        <?php endforeach; ?>
                     </ul>
                 </div>
             </div>
